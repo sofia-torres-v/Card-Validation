@@ -2,13 +2,89 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tarjeta de crédito válida</title>
+    <!-- icono para la pestaña del navegador -->
+    <link rel="shortcut icon" href="./iconCard.png"/>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+
+    <header class="header">
+
+      <nav class="menu  container">
+
+          <span class="logo">BancoNacional</span>
+
+          <ul class="elementos">
+              <li><a href="" class="link">Empresa</a></li>
+              <li><a href="" class="link">Productos</a></li>
+              <li><a href="" class="link">Contácto</a></li>
+              <li><a href="" class="link">zona virtual</a></li>
+          </ul>
+
+      </nav>
+
+  </header>
+
+  <main>
+      <section class="section">
+          <div class="container">
+              <h1 class="titulo">Bienvenido(a)  al  App 
+                   del Banco Nacional</h1>
+              <h2 class="sub-titulo">
+                  haz tus operaciones estés  donde estés !</h2>
+          </div>
+
+          <div class="contenedor-fi container">
+              
+              <!-- contenedor formulario -->
+              <form action="" class="form-contenedor">
+                  <h2 class="titulo-form">Registrate</h2>
+
+                  <div class="grupo">
+                      <label for="nombre">Nombres y Apellidos</label>
+                      <input type="text" name="" id="nombre" class="inp">
+                      <span id="texto2"></span>
+                  </div>
+
+                  <div class="grupo">
+                      <label for="cardNumber">Número de tarjeta de crédito</label>
+                      <input type="text" name="" id="cardNumber" class="inp">
+                      <span id="texto"></span>
+                  </div>
+
+                  <button type="button" id="btn" class="bttn" >Validar</button>
+              </form>
+               
+
+              <!-- contenedor imagen -->
+              <div class="contenedor-img" id="imagen">
+                  <img src="./mundo.png" class="img" alt="">
+              </div>
+              
+              <!-- contenedor mascara / en un inicio estara oculta -->
+              <div class="mascara" id="contenedorMascara">
+                  <p class="mascara-texto" id="textoMascara">0000 0000 0000 0000</p>
+              </div>
+
+          </div>
+
+      </section>
+
+  </main>
+  
+  <footer>
+
+      <div class="contenedor-footer  container">
+          <span class="logo">BancoNacional</span>
+          <p>2023 / Todos los Derechos Reservados</p>
+      </div>
+      
+  </footer>
+  <!-- script para los modulos -->
     <script src="index.js" type="module"></script>
   </body>
 </html>
+
