@@ -19,7 +19,7 @@ function showMenu() {
 }
 
 
-// Select del mes generado dinamicamnete
+// Select del mes generado dinámicamnete
 for (let i = 1; i <= 12; i++){
   const opcion = document.createElement('option');
   opcion.value = i;
@@ -28,6 +28,14 @@ for (let i = 1; i <= 12; i++){
 
 }
 
+// Select del año generado dinámicamnete
+const yearActual = new Date().getFullYear();
+for (let i = yearActual; i <= yearActual + 8; i++) {
+  const opcion = document.createElement('option');
+  opcion.value = i;
+  opcion.innerHTML = i;
+  formulario.selectYear.appendChild(opcion);
+}
 
 
 
