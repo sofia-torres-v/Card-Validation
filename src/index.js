@@ -25,7 +25,6 @@ for (let i = 1; i <= 12; i++){
   opcion.value = i;
   opcion.innerHTML = i;
   formulario.selectMes.appendChild(opcion)
-
 }
 
 // Select del año generado dinámicamnete
@@ -37,6 +36,11 @@ for (let i = yearActual; i <= yearActual + 8; i++) {
   formulario.selectYear.appendChild(opcion);
 }
 
+// Capturando el valo del input numero de tarjeta
+formulario.inputNumero.addEventListener('keyup', (e) => {
+  const valorInput = e.target.value;
 
-
+  // Eliminamos espacios en blanco/letras/colocamos espacios cada 4 digítos
+  formulario.inputNumero.value = valorInput.replace(/\s/g, '').replace(/\D/g, '').replace(/([0-9]{4})/g, '$1 ' ).trin();
+}); 
 
