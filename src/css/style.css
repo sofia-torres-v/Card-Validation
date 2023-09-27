@@ -1,0 +1,494 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62%;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------------------------------- Header----------------------------- */
+.header {
+  background-color: rgb(27, 27, 75);
+  border-bottom: 4px solid transparent;
+  box-shadow: 0 0.5rem 1rem rgba(1, 1, 1, 0.1);
+  padding: 10px 0;
+}
+
+.menu {
+  /* background-color: #52bd55; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* menu hanburguesa */
+/* .menu-icon{
+  background-color: rgb(255, 81, 0);
+} */
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+
+
+/* ------------------------------- */
+
+
+.elementos {
+  background-color: rgb(145, 155, 151);
+  background-color: rgb(27, 27, 75);
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  text-decoration: none;
+  list-style: none;
+  left: 0;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  z-index: 1;
+
+  left: -100%;
+  /* transform: translatey(-100%); */
+  transition: left .5s;
+}
+
+/* .elementos {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+} */
+
+.elementos.active{
+  left: 0;
+}
+
+.elementos .link {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 500ms ease;
+  font-size: 2.3rem;
+  background-color: rgba(128, 128, 128, 0.151);
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+}
+/* .elementos .link {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 500ms ease;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 500;
+} */
+
+.link:hover {
+  color: #551a8b;
+}
+
+.box-logo {
+  display: flex;
+}
+.box-logo .plane {
+  width: 30px;
+}
+
+.logo {
+  font-style: oblique;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* --------------------------------------- main----------------------- */
+
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: 50%;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color: #52bd55;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.circle-check {
+  border: 2px solid #52bd55;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.line {
+  height: 2px;
+  width: 80px;
+  background-color: #52bd55;
+}
+
+.step:last-child .line {
+  display: none;
+}
+
+.step:last-child .circle {
+  background-color: #52bd55; 
+}
+
+/* ----------------------------------- */
+
+.section-general{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(131, 129, 129);
+  padding: 10px 0 40px;
+}
+
+.section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* estilos general de la tarjeta */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  color: #fff;
+  position: relative;
+  transition: 0.3s ease all;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  /*esto es cuando gire la tejeta no se vea la info de adelanteparte */
+  cursor: pointer;
+
+}
+
+.tarjeta.active {
+  transform: rotateY(180deg);
+}
+
+.tarjeta > div {
+  /* que acceda a los dos div que tiene dentro */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+}
+
+.front {
+  padding: 30px;
+  width: 90%;
+  background-image: url("../assets/azul.jpg");
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.box-datos {
+  padding: 0 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.logo-marca {
+  text-align: right;
+  min-height: 35px;
+}
+
+.logo-marca img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 80px;
+}
+
+.chip {
+  width: 100%;
+  max-width: 45px;
+  margin-bottom: 15px;
+}
+
+.group .label {
+  font-size: 16px;
+  color: #7d8994;
+  margin-bottom: 5px;
+}
+
+.group .numero,
+.group .nombre,
+.group .expiracion {
+  color: #fff;
+  font-size: 18px;
+  text-transform: UpperCase;
+}
+
+.front .datos-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* tarjeta reves */
+.reverse {
+  background-image: url("../assets/azul.jpg");
+  background-size: cover;
+  width: 90%;
+  padding: 0 0 22px;
+  /* salga del flujo y quede arriba */
+  position: absolute;
+  top: 0;
+  /* rotar y esconder */
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.reverse .barra-magnetica {
+  height: 50px;
+  background-color: black;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.reverse .datos {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reverse .datos #firma {
+  width: 70%;
+}
+
+.reverse .datos #firma .firma {
+  height: 35px;
+  background: repeating-linear-gradient(
+    skyblue 0,
+    skyblue 5px,
+    orange 5px,
+    orange 10px
+  );
+}
+
+.reverse .datos #firma .firma p {
+  line-height: 40px;
+  font-family: cursive;
+  color: #000;
+  font-size: 28px;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+
+.reverse .datos #ccv {
+  width: 20%;
+}
+
+.reverse .datos #ccv .ccv {
+  background-color: #fdfdfd;
+  height: 35px;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+}
+
+.reverse .leyenda {
+  font-size: 12px;
+}
+
+.reverse .link-card {
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.angle {
+  width: 13px;
+}
+
+/* formulario de tarjeta */
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(27, 27, 75);
+}
+
+.formulario-tarjeta {
+  background-color: #fdf9f9;
+  width: 95%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.formulario-tarjeta label {
+  /* abarca todo el espacio disponible */
+  display: block;
+  color: #5d666e;
+  margin-bottom: 5px;
+  font-size: 2rem;
+}
+
+.formulario-tarjeta input,
+.formulario-tarjeta select,
+.btn-enviar {
+  border: 2px solid #b2b7be;
+  font-size: 18px;
+  height: 35px;
+  width: 100%;
+  transition: 0.3s ease all;
+  border-radius: 5px;
+}
+
+.formulario-tarjeta input:hover,
+.formulario-tarjeta select:hover {
+  border: 2px solid #8eadd1;
+}
+
+.formulario-tarjeta input:focus,
+.formulario-tarjeta select:focus {
+  outline: rgb(4, 4, 4);
+  box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.4);
+}
+
+.formulario-tarjeta .flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formulario-tarjeta .expira {
+  width: 100%;
+}
+.formulario-tarjeta .ccv {
+  min-width: 100px;
+}
+
+.formulario-tarjeta .group-select { 
+  width: 100%;
+  margin-right: 15px;
+  position: relative;
+}
+
+.formulario-tarjeta select {
+  -webkit-appearance: none;
+  appearance: none;
+    padding-left: 10px;
+    color: #5d666e;
+}
+
+.formulario-tarjeta .group-select .angle {
+  position: absolute;
+  color: #ced6e0;
+  top: 10px;
+  right: 15px;
+  transition: 0.3s ease all;
+}
+
+.formulario-tarjeta .group-select:hover .angle {
+  color: #93bfed;
+}
+
+.formulario-tarjeta .btn-enviar {
+  border: none;
+  background-color: #ccc;
+  border: 2px solid #b2b7be;
+  font-size: 1.8rem;
+  color: rgb(27, 27, 75);
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.formulario-tarjeta .btn-enviar:hover {
+    box-shadow: 2px 2px 10px 0 rgba(0, 85, 212, 0.4);
+}
+
+/* --------------------------------------- FOOTER----------------------- */
+
+footer {
+  padding: 13px;
+  background-color: #ccc;
+  border-top: 1px solid rgb(27, 27, 75);
+  background-color: rgb(131, 129, 129);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+
+@media (min-width: 800px) {
+  .elementos {
+    position: inherit; /* que vuelva a su flujo */
+    height: auto;
+    flex-direction: row;
+    width: auto;
+    gap: 30px;
+    background-color: transparent;
+  }
+  .elementos .link{
+    font-size: 1.8rem;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .section{
+    flex-direction: row;
+  }
+
+  .line {
+    width: 135px;
+  }
+}

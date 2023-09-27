@@ -1,90 +1,169 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tarjeta de crédito válida</title>
     <!-- icono para la pestaña del navegador -->
-    <link rel="shortcut icon" href="./iconCard.png"/>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./iconCard.png" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-
     <header class="header">
-
-      <nav class="menu  container">
-
-          <span class="logo">BancoNacional</span>
-
-          <ul class="elementos">
-              <li><a href="" class="link">Empresa</a></li>
-              <li><a href="" class="link">Productos</a></li>
-              <li><a href="" class="link">Contácto</a></li>
-              <li><a href="" class="link">zona virtual</a></li>
+      <nav class="menu container">
+        <div class="box-logo">
+          <img class="plane" src="./assets/airplne-white.png" alt="" />
+          <span class="logo">Flying</span>
+        </div>
+        <!-- Agregamos botón menú hamburguesa solo para mobil -->
+        <div class="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <!-- Menu desplegable oculto por defecto -->
+       
+          <ul class="elementos" id="menu">
+            <li><a href="#" class="link">Inicio</a></li>
+            <li><a href="#" class="link">Promociones </a></li>
+            <li><a href="#" class="link">Métodos de pago</a></li>
           </ul>
-
+        
       </nav>
+    </header>
 
-  </header>
-
-  <main>
-      <section class="section">
-          <div class="container">
-              <h1 class="titulo">Bienvenido(a)  al  App 
-                   del Banco Nacional</h1>
-              <h2 class="sub-titulo">
-                  haz tus operaciones estés  donde estés !</h2>
+    <main>
+      <div class="section-general">
+        <div class="stepper">
+          <div class="step">
+            <div class="circle">1</div>
+            <div class="line"></div>
           </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <div class="line"></div>
+          </div>
+          <div class="step">
+            <div class="circle">3</div>
+            <div class="line"></div>
+          </div>
+          <div class="step">
+            <div class="circle-check">✔</div>
+          </div>
+        </div>
 
-          <div class="contenedor-fi container">
-              
-              <!-- contenedor formulario -->
-              <form action="" class="form-contenedor">
-                  <h2 class="titulo-form">Registrate</h2>
-
-                  <div class="grupo">
-                      <label for="nombre">Nombres y Apellidos</label>
-                      <input type="text" name="" id="nombre" class="inp">
-                      <span id="texto2"></span>
-                  </div>
-
-                  <div class="grupo">
-                      <label for="cardNumber">Número de tarjeta de crédito</label>
-                      <input type="text" name="" id="cardNumber" class="inp">
-                      <span id="texto"></span>
-                  </div>
-
-                  <button type="button" id="btn" class="bttn" >Validar</button>
-              </form>
-               
-
-              <!-- contenedor imagen -->
-              <div class="contenedor-img" id="imagen">
-                  <img src="./mundo.png" class="img" alt="">
-              </div>
-              
-              <!-- contenedor mascara / en un inicio estara oculta -->
-              <div class="mascara" id="contenedorMascara">
-                  <p class="mascara-texto" id="textoMascara">0000 0000 0000 0000</p>
+        <div class="section">
+          <!-- tarjeta -->
+          <div class="tarjeta" id="tarjeta">
+            <div class="front">
+              <img class="chip" src="./assets/chip.png" alt="" />
+              <div class="datos">
+                <div class="group" id="numero">
+                  <p class="label">Número de tarjeta</p>
+                  <p class="numero">#### #### #### ####</p>
+                </div>
               </div>
 
+              <div class="datos-flex">
+                <div class="group" id="nombre">
+                  <p class="label">Nombre</p>
+                  <p class="nombre">Sofia Torres</p>
+                </div>
+
+                <div class="group" id="expiracion">
+                  <p class="label">Expiración</p>
+                  <p class="expiracion">
+                    <span class="mes">MM</span> / <span class="anio">AA</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reverse">
+              <div class="barra-magnetica"></div>
+
+              <div class="box-datos">
+                <div class="datos">
+                  <div class="group" id="firma">
+                    <p class="label">Firma</p>
+                    <div class="firma"><p>Sofia</p></div>
+                  </div>
+                  <div class="group" id="ccv">
+                    <p class="label">CVV</p>
+                    <div class="ccv"><p></p></div>
+                  </div>
+                </div>
+                <p class="leyenda">
+                  Esta tarjeta es propiedad del bancoContinental, su uso es
+                  personal e instranferible.
+                </p>
+                <a href="#" class="link-card">www.bancoContinental.com.pe</a>
+              </div>
+            </div>
           </div>
 
-      </section>
+          <!-- formulario -->
+          <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+            <p class="title">Pagar y Reservar vuelo</p>
+            <div class="group">
+              <label for="inputNombre">Nombre</label>
+              <input
+                type="text"
+                id="inputNombre"
+                maxlength="19"
+                autocomplete="off"
+              />
+            </div>
 
-  </main>
-  
-  <footer>
+            <div class="group">
+              <label for="inputNumero">Número de tarjeta</label>
+              <input
+                type="text"
+                id="inputNumero"
+                maxlength="19"
+                autocomplete="off"
+              />
+            </div>
 
-      <div class="contenedor-footer  container">
-          <span class="logo">BancoNacional</span>
-          <p>2023 / Todos los Derechos Reservados</p>
+            <div class="flexbox">
+              <div class="group expira">
+                <label for="selectMes">Expiración</label>
+                <div class="flexbox">
+                  <div class="group-select">
+                    <select name="mes" id="selectMes">
+                      <option disabled selected>Mes</option>
+                    </select>
+                    <!-- <i class="fa-solid fa-angle-down"></i> -->
+                    <img class="angle" src="./assets/angle.png" alt="" />
+                  </div>
+                  <div class="group-select">
+                    <select name="year" id="selectYear">
+                      <option disabled selected>Año</option>
+                    </select>
+                    <!-- <i class="fa-solid fa-angle-down"></i> -->
+                    <img class="angle" src="./assets/angle.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="group ccv">
+                <label for="inputCvv" class="inputCvv">cvv</label>
+                <input type="text" id="inputCvv" maxlength="3" />
+              </div>
+            </div>
+
+            <button class="btn-enviar" type="submit">Pagar ahora</button>
+          </form>
+        </div>
       </div>
-      
-  </footer>
-  <!-- script para los modulos -->
+    </main>
+
+    <footer>
+      <div class="contenedor-footer container">
+        <p>© 2023 / Todos los Derechos Reservados.</p>
+      </div>
+    </footer>
+
     <script src="index.js" type="module"></script>
   </body>
 </html>
-
