@@ -227,15 +227,25 @@ html {
 }
 
 .front {
-  padding: 30px;
+  padding: 20px;
   width: 90%;
   background-image: url("../assets/azul.jpg");
   background-size: cover;
   backface-visibility: hidden;
 }
 
+.box-visa{
+  text-align: right;
+  display: block;
+}
+.logo-card{
+  width: 75px;
+  height: 50px;
+
+}
+
 .box-datos {
-  padding: 0 20px;
+  padding: 5px 20px;
   display: grid;
   gap: 20px;
 }
@@ -283,7 +293,7 @@ html {
   background-image: url("../assets/azul.jpg");
   background-size: cover;
   width: 90%;
-  padding: 0 0 22px;
+  padding: 0 0 30px;
   /* salga del flujo y quede arriba */
   position: absolute;
   top: 0;

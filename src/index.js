@@ -47,7 +47,8 @@ formulario.inputNumero.addEventListener("keyup", (e) => {
     .trim();
 
   numeroTarjeta.textContent = valorInput;
-
+  
+  // Para que se muestre # por defecto
   if (valorInput === "") {
     numeroTarjeta.textContent = "#### #### #### ####";
   }
