@@ -241,7 +241,7 @@ html {
 
 .logo-marca {
   text-align: right;
-  min-height: 35px;
+  min-height: 50px;
 }
 
 .logo-marca img {
@@ -283,7 +283,7 @@ html {
   background-image: url("../assets/azul.jpg");
   background-size: cover;
   width: 90%;
-  padding: 0 0 30px;
+  padding: 0 0 20px;
   /* salga del flujo y quede arriba */
   position: absolute;
   top: 0;
@@ -383,7 +383,7 @@ html {
 
 .formulario-tarjeta input,
 .formulario-tarjeta select,
-.btn-enviar {
+#btn-enviar {
   border: 2px solid #b2b7be;
   font-size: 18px;
   height: 35px;

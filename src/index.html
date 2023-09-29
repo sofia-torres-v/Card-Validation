@@ -73,6 +73,7 @@
                   <p class="label">Nombre</p>
                   <p class="nombre">Sofia Torres</p>
                 </div>
+          
 
                 <div class="group" id="expiracion">
                   <p class="label">Expiración</p>
@@ -111,23 +112,14 @@
             <p class="title">Pagar y Reservar vuelo</p>
             <div class="group">
               <label for="inputNombre">Nombre</label>
-              <input
-                type="text"
-                id="inputNombre"
-                maxlength="19"
-                autocomplete="off"
-              />
+              <input type="text"id="inputNombre"maxlength="19"autocomplete="off"/>
             </div>
 
             <div class="group">
               <label for="inputNumero">Número de tarjeta</label>
-              <input
-                type="text"
-                id="inputNumero"
-                maxlength="19"
-                autocomplete="off"
-              />
+              <input type="text" id="inputNumero" maxlength="19" autocomplete="off"/>
             </div>
+            <span id="texto"></span>
 
             <div class="flexbox">
               <div class="group expira">
@@ -156,7 +148,7 @@
               </div>
             </div>
 
-            <button class="btn-enviar" type="submit">Pagar ahora</button>
+            <button id="btn-enviar" type="button">Pagar ahora</button>
           </form>
         </div>
       </div>

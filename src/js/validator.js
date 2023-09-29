@@ -1,9 +1,17 @@
 const validator = {
   isValid: function (valorNumero) {
-    const newArray = valorNumero
-      .split("")
-      .reverse()
-      .map((x) => parseInt(x));
+    // Eliminar todos los espacios en blanco
+    valorNumero = valorNumero.replace(/\s/g, "");
+
+    // Eliminar todos los caracteres que no sean dígitos
+    valorNumero = valorNumero.replace(/\D/g, "");
+
+    // Verificar si el valor resultante es vacío o no es un número
+    if (valorNumero === "" || isNaN(valorNumero)) {
+      return false;
+    }
+
+    const newArray = valorNumero.split("").reverse().map((x) => parseInt(x));
 
     for (let i = 0; i < newArray.length; i++) {
       if (i % 2 !== 0) {
@@ -21,7 +29,7 @@ const validator = {
     }
 
     let total = 0;
-    //recorrer totdos los numero actualizados
+    //recorrer todos los numero actualizados
     for (let i = 0; i < newArray.length; i++) {
       total = total + newArray[i];
     }
