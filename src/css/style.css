@@ -211,7 +211,6 @@ html {
   transform-style: preserve-3d;
   /*esto es cuando gire la tejeta no se vea la info de adelanteparte */
   cursor: pointer;
-
 }
 
 .tarjeta.active {
@@ -234,16 +233,6 @@ html {
   backface-visibility: hidden;
 }
 
-.box-visa{
-  text-align: right;
-  display: block;
-}
-.logo-card{
-  width: 75px;
-  height: 50px;
-
-}
-
 .box-datos {
   padding: 5px 20px;
   display: grid;
@@ -261,6 +250,7 @@ html {
   object-fit: cover;
   max-width: 80px;
 }
+
 
 .chip {
   width: 100%;

@@ -6,6 +6,8 @@ const elementosMenu = document.getElementById("menu");
 const formulario = document.querySelector("#formulario-tarjeta");
 const numeroTarjeta = document.querySelector("#tarjeta .numero");
 // const nombreTarjeta = document.querySelector("#tarjeta .nombre");
+const logoMarca = document.querySelector('#logo-marca');
+
 // Rotación de la tarjeta
 tarjeta.addEventListener("click", () => {
   tarjeta.classList.toggle("active");
@@ -18,7 +20,7 @@ function showMenu() {
   elementosMenu.classList.toggle("active");
 }
 
-// Select del mes generado dinámicamnete
+// Select del mes y año generado dinámicamnete
 for (let i = 1; i <= 12; i++) {
   const opcion = document.createElement("option");
   opcion.value = i;
@@ -26,7 +28,6 @@ for (let i = 1; i <= 12; i++) {
   formulario.selectMes.appendChild(opcion);
 }
 
-// Select del año generado dinámicamnete
 const yearActual = new Date().getFullYear();
 for (let i = yearActual; i <= yearActual + 8; i++) {
   const opcion = document.createElement("option");
@@ -34,6 +35,7 @@ for (let i = yearActual; i <= yearActual + 8; i++) {
   opcion.innerHTML = i;
   formulario.selectYear.appendChild(opcion);
 }
+
 
 // Capturando el valo del input numero de tarjeta
 formulario.inputNumero.addEventListener("keyup", (e) => {
@@ -48,8 +50,20 @@ formulario.inputNumero.addEventListener("keyup", (e) => {
 
   numeroTarjeta.textContent = valorInput;
   
-  // Para que se muestre # por defecto
   if (valorInput === "") {
     numeroTarjeta.textContent = "#### #### #### ####";
+    logoMarca.innerHTML = '';
+  }
+
+  if (valorInput[0] === '4') {
+    logoMarca.innerHTML = '';
+    const imagen = document.createElement('img');
+    imagen.src = "assets/visa.png";
+    logoMarca.appendChild(imagen);
+  }else if (valorInput[0] === '5') {
+    logoMarca.innerHTML = '';
+    const imagen = document.createElement('img');
+    imagen.src = "assets/masterc.png";
+    logoMarca.appendChild(imagen);
   }
 });
