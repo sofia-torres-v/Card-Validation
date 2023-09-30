@@ -4,12 +4,14 @@ const tarjeta = document.querySelector("#tarjeta");
 const menuIcon = document.querySelector(".menu-icon");
 const elementosMenu = document.getElementById("menu");
 const formulario = document.querySelector("#formulario-tarjeta");
+
 const inputNumero = document.querySelector("#inputNumero");
-// const inputNombre = document.querySelector('#inputNombre');
+const inputNombre = document.querySelector("#inputNombre");
 
 const numeroTarjeta = document.querySelector(".numero");
 const nombreTarjeta = document.querySelector(".nombre");
 const texto = document.querySelector("#texto");
+const texto2 = document.querySelector("#texto2");
 const btn = document.querySelector("#btn-enviar");
 
 const logoMarca = document.querySelector("#logo-marca");
@@ -50,63 +52,63 @@ for (let i = yearActual; i <= yearActual + 8; i++) {
   formulario.selectYear.appendChild(opcion);
 }
 
-// * Input número de la tarjeta
-formulario.inputNumero.addEventListener("keyup", (e) => {
-  const valorInput = e.target.value;
+// * INPUT NUMERO TARJETA
+
+formulario.inputNumero.addEventListener("blur", () => {
+  const valorInput = formulario.inputNumero.value;
+
+  if (valorInput === "") {
+    inputNumero.style.border = "2px solid #b2b7be"; // Quitar borde rojo
+    texto.innerHTML = ""; // Limpiar mensaje de error
+  }
+});
+
+formulario.inputNombre.addEventListener("blur", () => {
+  const valorInput = formulario.inputNombre.value;
+
+  if (valorInput === "") {
+    inputNombre.style.border = "2px solid #b2b7be"; // Quitar borde rojo
+    texto.innerHTML = ""; // Limpiar mensaje de error
+  }
+});
+
+formulario.inputNumero.addEventListener("input", () => {
+  // const valorInput = e.target.value;
+  const valorInput = formulario.inputNumero.value;
   formulario.inputNumero.value = valorInput
-    .replace(/\s/g, "") // Elimina espacios
-    .replace(/\D/g, "") // letras
-    .replace(/([0-9]{4})/g, "$1 ") // espacios cada 4 digítos
+    .replace(/\s/g, "") // Eliminar espacios
+    .replace(/\D/g, "") // Eliminar letras
+    .replace(/([0-9]{4})/g, "$1 ") // Agregar espacios cada 4 digítos
     .trim();
   numeroTarjeta.textContent = valorInput;
 
   if (valorInput === "") {
     numeroTarjeta.textContent = "#### #### #### ####";
     logoMarca.innerHTML = "";
-    inputNumero.style.border = "1px solid #b2b7be"; // Quita el borde rojo
-    texto.innerHTML = ""; // Limpia el mensaje de error
+    inputNumero.style.border = "2px solid #b2b7be";
+    texto.innerHTML = "";
+  } else {
+    inputNumero.style.border = "1px solid #52bd55"; // Establecer borde verde
+    texto2.innerHTML = ""; // Limpiar mensaje de error
   }
 
   if (valorInput[0] === "4") {
     logoMarca.innerHTML = "";
     const imagen = document.createElement("img");
-    imagen.src = "assets/vis.png";
+    imagen.src = "assets/visa.png";
     logoMarca.appendChild(imagen);
-
   } else if (valorInput[0] === "5") {
     logoMarca.innerHTML = "";
     const imagen = document.createElement("img");
     imagen.src = "assets/masterc.png";
     logoMarca.appendChild(imagen);
   }
-
   mostrarFrente();
 });
 
-
-btn.addEventListener("click", validate);
-function validate() {
-  const valorNumero = inputNumero.value;
-  const luhn = validator.isValid(valorNumero);
-
-
-  if (valorNumero === "") {
-    texto.innerHTML = " Este campo es obligatorio";
-    inputNumero.style.border = "1px solid red";
-
-  } else if (luhn) {
-    texto.innerHTML = "Tarjeta válida";
-    inputNumero.style.border = "1px solid green";
-  }else {
-    texto.innerHTML = " Error de validacion";
-    inputNumero.style.border = "1px solid red";
-  }
-}
-
-
 // Input nombre de tarjeta
-formulario.inputNombre.addEventListener("keyup", (e) => {
-  const valorInput = e.target.value;
+formulario.inputNombre.addEventListener("input", () => {
+  const valorInput = formulario.inputNombre.value;
 
   formulario.inputNombre.value = valorInput.replace(/[0-9]/g, "");
   nombreTarjeta.textContent = valorInput;
@@ -114,8 +116,45 @@ formulario.inputNombre.addEventListener("keyup", (e) => {
 
   if (valorInput === "") {
     nombreTarjeta.textContent = "Sofia Torres";
+    inputNombre.style.border = "2px solid #b2b7be";
+    texto.innerHTML = "";
   }
 
   mostrarFrente();
 });
 
+btn.addEventListener("click", validate);
+function validate() {
+  const valorNumero = inputNumero.value;
+  const valorNombre = inputNombre.value;
+
+  const luhn = validator.isValid(valorNumero);
+
+  if (valorNumero === "") {
+    texto.innerHTML = " Este campo es obligatorio";
+    inputNumero.style.border = "1px solid red";
+  } else if (luhn) {
+    texto.innerHTML = "Tarjeta válida";
+    inputNumero.style.border = "1px solid #52bd55";
+  } else {
+    texto.innerHTML = " Error de validacion";
+    inputNumero.style.border = "1px solid red";
+  }
+  // input nombre
+  if (valorNombre === "") {
+    texto2.innerHTML = "Este campo es obligatorio";
+    inputNombre.style.border = "1px solid red";
+  }
+}
+
+formulario.inputNombre.addEventListener("input", () => {
+  const valorInput = formulario.inputNombre.value;
+
+  if (valorInput === "") {
+    inputNombre.style.border = "2px solid #b2b7be"; // Quitar borde rojo
+    texto2.innerHTML = ""; // Limpiar mensaje de error
+  } else {
+    inputNombre.style.border = "1px solid #52bd55"; // Establecer borde verde
+    texto2.innerHTML = ""; // Limpiar mensaje de error
+  }
+});

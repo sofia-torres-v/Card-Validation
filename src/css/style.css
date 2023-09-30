@@ -15,6 +15,8 @@ html {
   margin: 0 auto;
 }
 
+
+
 /* ---------------------------------- Header----------------------------- */
 .header {
   background-color: rgb(27, 27, 75);
@@ -24,17 +26,10 @@ html {
 }
 
 .menu {
-  /* background-color: #52bd55; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
-
-/* menu hanburguesa */
-/* .menu-icon{
-  background-color: rgb(255, 81, 0);
-} */
 
 .bar {
   width: 25px;
@@ -44,12 +39,8 @@ html {
 }
 
 
-
 /* ------------------------------- */
-
-
 .elementos {
-  background-color: rgb(145, 155, 151);
   background-color: rgb(27, 27, 75);
   position: fixed;
   height: 100vh;
@@ -64,21 +55,10 @@ html {
   align-items: center;
   gap: 35px;
   z-index: 1;
-
   left: -100%;
   /* transform: translatey(-100%); */
   transition: left .5s;
 }
-
-/* .elementos {
-  display: flex;
-  list-style: none;
-  align-items: center;
-  font-size: 1.7rem;
-  font-weight: bold;
-  color: #000;
-  text-transform: uppercase;
-} */
 
 .elementos.active{
   left: 0;
@@ -95,14 +75,6 @@ html {
   color: #fff;
   font-weight: 500;
 }
-/* .elementos .link {
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 500ms ease;
-  font-size: 2.5rem;
-  color: #fff;
-  font-weight: 500;
-} */
 
 .link:hover {
   color: #551a8b;
@@ -197,6 +169,7 @@ html {
   justify-content: center;
   align-items: center;
 }
+
 /* estilos general de la tarjeta */
 .tarjeta {
   display: flex;
@@ -209,7 +182,7 @@ html {
   transition: 0.3s ease all;
   transform: rotateY(0deg);
   transform-style: preserve-3d;
-  /*esto es cuando gire la tejeta no se vea la info de adelanteparte */
+  /* Al girar la tejeta no se vea la info frontal */
   cursor: pointer;
 }
 
@@ -226,7 +199,7 @@ html {
 }
 
 .front {
-  padding: 20px;
+  padding: 0px 15px 15px;
   width: 90%;
   background-image: url("../assets/azul.jpg");
   background-size: cover;
@@ -241,7 +214,7 @@ html {
 
 .logo-marca {
   text-align: right;
-  min-height: 50px;
+  min-height: 60px;
 }
 
 .logo-marca img {
@@ -249,8 +222,8 @@ html {
   height: 100%;
   object-fit: cover;
   max-width: 80px;
+  margin-top: 10px;
 }
-
 
 .chip {
   width: 100%;
@@ -283,7 +256,7 @@ html {
   background-image: url("../assets/azul.jpg");
   background-size: cover;
   width: 90%;
-  padding: 0 0 20px;
+  padding: 0 0 22px;
   /* salga del flujo y quede arriba */
   position: absolute;
   top: 0;
@@ -355,11 +328,11 @@ html {
 }
 
 /* formulario de tarjeta */
-
-.title {
+.title-formulario{
   text-align: center;
   font-size: 2rem;
   color: rgb(27, 27, 75);
+  padding-bottom: 12px;
 }
 
 .formulario-tarjeta {
@@ -390,6 +363,8 @@ html {
   width: 100%;
   transition: 0.3s ease all;
   border-radius: 5px;
+  padding: 5px 12px;
+  color: rgb(27, 27, 75);
 }
 
 .formulario-tarjeta input:hover,
@@ -411,6 +386,7 @@ html {
 .formulario-tarjeta .expira {
   width: 100%;
 }
+
 .formulario-tarjeta .ccv {
   min-width: 100px;
 }
@@ -455,8 +431,8 @@ html {
     box-shadow: 2px 2px 10px 0 rgba(0, 85, 212, 0.4);
 }
 
-/* --------------------------------------- FOOTER----------------------- */
 
+/* --------------------------------------- FOOTER----------------------- */
 footer {
   padding: 13px;
   background-color: #ccc;
