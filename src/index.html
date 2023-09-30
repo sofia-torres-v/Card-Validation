@@ -74,7 +74,7 @@
                 <div class="group" id="expiracion">
                   <p class="label">Expiración</p>
                   <p class="expiracion">
-                    <span class="mes">MM</span> / <span class="anio">AA</span>
+                    <span class="mes">MM</span> / <span class="year">AA</span>
                   </p>
                 </div>
               </div>
@@ -89,9 +89,9 @@
                     <p class="label">Firma</p>
                     <div class="firma"><p>Sofia</p></div>
                   </div>
-                  <div class="group" id="ccv">
+                  <div class="group" id="cvv">
                     <p class="label">CVV</p>
-                    <div class="ccv"><p></p></div>
+                    <div class="cvv"><p></p></div>
                   </div>
                 </div>
                 <p class="leyenda">
@@ -106,17 +106,19 @@
           <!-- formulario -->
           <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
             <p class="title-formulario">Pagar y Reservar vuelo</p>
+
+			<div class="group">
+			  <label for="inputNumero">Número de tarjeta</label>
+			  <input type="text" id="inputNumero" maxlength="19" autocomplete="off"/>
+			</div>
+			<span id="texto"></span>
+
             <div class="group">
               <label for="inputNombre">Nombre y Apellido</label>
               <input type="text"id="inputNombre"maxlength="19"autocomplete="off"/>
             </div>
             <span id="texto2"></span>
 
-            <div class="group">
-              <label for="inputNumero">Número de tarjeta</label>
-              <input type="text" id="inputNumero" maxlength="19" autocomplete="off"/>
-            </div>
-            <span id="texto"></span>
 
             <div class="flexbox">
               <div class="group expira">
@@ -125,7 +127,6 @@
                   <div class="group-select">
                     <select name="mes" id="selectMes">
                       <option disabled selected>Mes</option>
-                      <option value="">1</option>
                     </select>
                     <!-- <i class="fa-solid fa-angle-down"></i> -->
                     <img class="angle" src="./assets/angle.png" alt="" />
@@ -138,7 +139,7 @@
                   </div>
                 </div>
               </div>
-              <div class="group ccv">
+              <div class="group cvv">
                 <label for="inputCvv" class="inputCvv">cvv</label>
                 <input type="text" id="inputCvv" maxlength="3" />
               </div>

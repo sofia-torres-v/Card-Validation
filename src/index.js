@@ -16,6 +16,20 @@ const btn = document.querySelector("#btn-enviar");
 
 const logoMarca = document.querySelector("#logo-marca");
 const firma = document.querySelector("#tarjeta .firma p");
+const mesExpiracion = document.querySelector('.mes');
+const yearExpiracion= document.querySelector('.year');
+const cvv= document.querySelector('.cvv');
+
+
+
+
+// Menú hamburguesa
+menuIcon.addEventListener("click", showMenu);
+function showMenu() {
+  // Si tiene o no  la clase aparece y desaparece
+  elementosMenu.classList.toggle("active");
+}
+
 
 // * Volteamos la tarjeta para mostrar el frente
 const mostrarFrente = () => {
@@ -29,18 +43,12 @@ tarjeta.addEventListener("click", () => {
   tarjeta.classList.toggle("active");
 });
 
-// Menú hamburguesa
-menuIcon.addEventListener("click", showMenu);
-function showMenu() {
-  // Si tiene o no  la clase aparece y desaparece
-  elementosMenu.classList.toggle("active");
-}
 
 // Select del mes y año generado dinámicamnete
 for (let i = 1; i <= 12; i++) {
   const opcion = document.createElement("option");
   opcion.value = i;
-  opcion.innerHTML = i;
+  opcion.innerText = i;
   formulario.selectMes.appendChild(opcion);
 }
 
@@ -51,6 +59,16 @@ for (let i = yearActual; i <= yearActual + 8; i++) {
   opcion.innerHTML = i;
   formulario.selectYear.appendChild(opcion);
 }
+
+// Si el clic ocurre fuera del formulario, limpiar mensajes de error y estilos rojos
+document.addEventListener("click", (e) => {
+  if (!formulario.contains(e.target)) {
+    inputNumero.style.border = "2px solid #b2b7be";
+    texto.innerHTML = "";
+    inputNombre.style.border = "2px solid #b2b7be";
+    texto2.innerHTML = "";
+  }
+});
 
 // * INPUT NUMERO TARJETA
 
@@ -68,7 +86,7 @@ formulario.inputNombre.addEventListener("blur", () => {
 
   if (valorInput === "") {
     inputNombre.style.border = "2px solid #b2b7be"; // Quitar borde rojo
-    texto.innerHTML = ""; // Limpiar mensaje de error
+    texto2.innerHTML = ""; // Limpiar mensaje de error
   }
 });
 
@@ -89,7 +107,7 @@ formulario.inputNumero.addEventListener("input", () => {
     texto.innerHTML = "";
   } else {
     inputNumero.style.border = "1px solid #52bd55"; // Establecer borde verde
-    texto2.innerHTML = ""; // Limpiar mensaje de error
+    texto.innerHTML = ""; // Limpiar mensaje de error
   }
 
   if (valorInput[0] === "4") {
@@ -117,7 +135,7 @@ formulario.inputNombre.addEventListener("input", () => {
   if (valorInput === "") {
     nombreTarjeta.textContent = "Sofia Torres";
     inputNombre.style.border = "2px solid #b2b7be";
-    texto.innerHTML = "";
+    texto2.innerHTML = "";
   }
 
   mostrarFrente();
@@ -136,6 +154,7 @@ function validate() {
   } else if (luhn) {
     texto.innerHTML = "Tarjeta válida";
     inputNumero.style.border = "1px solid #52bd55";
+	
   } else {
     texto.innerHTML = " Error de validacion";
     inputNumero.style.border = "1px solid red";
@@ -157,4 +176,24 @@ formulario.inputNombre.addEventListener("input", () => {
     inputNombre.style.border = "1px solid #52bd55"; // Establecer borde verde
     texto2.innerHTML = ""; // Limpiar mensaje de error
   }
+});
+
+// Select del mes y Año
+
+formulario.selectMes.addEventListener('change', (e) => {
+  mesExpiracion.textContent = e.target.value;
+  mostrarFrente();
+})
+formulario.selectYear.addEventListener('change', (e) => {
+  yearExpiracion.textContent = e.target.value.slice(2);
+  mostrarFrente();
+})
+
+// cvv
+formulario.inputCvv.addEventListener('keyup', () => {
+  if(!tarjeta.classList.contains("active")){
+    tarjeta.classList.toggle("active");
+  } 
+  formulario.inputCvv.value = formulario.inputCvv.value.replace(/\s/g, '').replace(/\D/g, '');
+  cvv.textContent = formulario.inputCvv.value;
 });

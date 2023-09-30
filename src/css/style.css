@@ -17,12 +17,12 @@ html {
 
 
 
+
+
 /* ---------------------------------- Header----------------------------- */
 .header {
   background-color: rgb(27, 27, 75);
-  border-bottom: 4px solid transparent;
-  box-shadow: 0 0.5rem 1rem rgba(1, 1, 1, 0.1);
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .menu {
@@ -41,7 +41,6 @@ html {
 
 /* ------------------------------- */
 .elementos {
-  background-color: rgb(27, 27, 75);
   position: fixed;
   height: 100vh;
   top: 0;
@@ -69,7 +68,7 @@ html {
   border-bottom: 2px solid transparent;
   transition: all 500ms ease;
   font-size: 2.3rem;
-  background-color: rgba(128, 128, 128, 0.151);
+  /* background-color: rgba(128, 128, 128, 0.151); */
   padding: 6px 10px;
   border-radius: 5px;
   color: #fff;
@@ -77,7 +76,8 @@ html {
 }
 
 .link:hover {
-  color: #551a8b;
+  background-color: rgb(56, 32, 107);
+  color: #fff;
 }
 
 .box-logo {
@@ -113,8 +113,8 @@ html {
 }
 
 .circle {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background-color: #52bd55;
   border-radius: 50%;
   display: flex;
@@ -155,11 +155,10 @@ html {
 .section-general{
   display: flex;
   flex-direction: column;
-  gap: 10px;
   justify-content: center;
   align-items: center;
   background-color: rgb(131, 129, 129);
-  padding: 10px 0 40px;
+  padding: 10px 0 22px;
 }
 
 .section{
@@ -301,13 +300,14 @@ html {
   text-transform: capitalize;
 }
 
-.reverse .datos #ccv {
+.reverse .datos #cvv {
   width: 20%;
 }
 
-.reverse .datos #ccv .ccv {
+.reverse .datos #cvv .cvv {
   background-color: #fdfdfd;
   height: 35px;
+  font-size: 2rem;
   color: #000;
   padding: 10px;
   text-align: center;
@@ -332,7 +332,7 @@ html {
   text-align: center;
   font-size: 2rem;
   color: rgb(27, 27, 75);
-  padding-bottom: 12px;
+  padding-bottom: 5px;
 }
 
 .formulario-tarjeta {
@@ -351,7 +351,7 @@ html {
   display: block;
   color: #5d666e;
   margin-bottom: 5px;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .formulario-tarjeta input,
@@ -387,7 +387,7 @@ html {
   width: 100%;
 }
 
-.formulario-tarjeta .ccv {
+.formulario-tarjeta .cvv {
   min-width: 100px;
 }
 
@@ -416,7 +416,7 @@ html {
   color: #93bfed;
 }
 
-.formulario-tarjeta .btn-enviar {
+.formulario-tarjeta #btn-enviar {
   border: none;
   background-color: #ccc;
   border: 2px solid #b2b7be;
@@ -427,7 +427,7 @@ html {
   font-weight: bold;
 }
 
-.formulario-tarjeta .btn-enviar:hover {
+.formulario-tarjeta #btn-enviar:hover {
     box-shadow: 2px 2px 10px 0 rgba(0, 85, 212, 0.4);
 }
 
