@@ -29,7 +29,7 @@ La interfaz de la aplicación recrea el escenario de una agencia de viajes, brin
 
 La pantalla de inicio es el primer lugar donde los usuarios interactúan con nuestra aplicación. Aquí pueden ingresar el número de su tarjeta de crédito para su validación.
 
-![Pantalla de Inicio](screenshots/inicio.png)
+![Pantalla de Inicio](./assets/home.jpg)
 
 ### Validación Exitosa
 
