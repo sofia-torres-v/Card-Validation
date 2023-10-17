@@ -23,3 +23,26 @@ La aplicación "Validador de Tarjeta de Crédito" permite a los usuarios ingresa
 
 La interfaz de la aplicación recrea el escenario de una agencia de viajes, brindando a los usuarios una experiencia visual atractiva y realista. 
 
+## Interfaz de Usuario
+
+### Pantalla de Inicio
+
+La pantalla de inicio es el primer lugar donde los usuarios interactúan con nuestra aplicación. Aquí pueden ingresar el número de su tarjeta de crédito para su validación.
+
+![Pantalla de Inicio](screenshots/inicio.png)
+
+### Validación Exitosa
+
+Cuando el usuario ingresa un número de tarjeta de crédito válido, la aplicación muestra un mensaje de validación exitosa y oculta todos los dígitos de la tarjeta, excepto los últimos cuatro. Además, se muestra el logotipo de la franquicia correspondiente.
+
+- Si el número de tarjeta de crédito comienza con "4", se muestra el logotipo de Visa.
+- Si el número de tarjeta de crédito comienza con "5", se muestra el logotipo de MasterCard.
+
+![Validación Exitosa](screenshots/validacion-exitosa.png)
+
+### Validación Fallida
+
+Si el usuario ingresa un número de tarjeta de crédito no válido, la aplicación muestra un mensaje de validación fallida para informar al usuario que la tarjeta no es válida.
+
+![Validación Fallida](screenshots/validacion-fallida.png)
+
