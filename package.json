@@ -30,5 +30,8 @@
     "createdAt": "2023-02-01T14:33:46.927Z",
     "version": "5.5.0",
     "commit": "36bf90dc273bab8ffe9546b09eece6a132f8a669"
+  },
+  "dependencies": {
+    "sass": "^1.68.0"
   }
 }

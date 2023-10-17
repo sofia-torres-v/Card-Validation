@@ -1,9 +1,5 @@
 # Tarjeta de crédito válida
 
-
-
-
-
 ## Preámbulo
 
 El [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn),
@@ -21,19 +17,36 @@ la suma de sus dígitos finales es un múltiplo de 10.
 
 ## Resumen del proyecto
 
-En este proyecto tendrás que construir una aplicación web que le permita a un
-usuario validar el número de una tarjeta de crédito. Además, tendrás que
-implementar funcionalidad para ocultar todos los dígitos de una tarjeta menos
-los últimos cuatro.
+### Validación de Tarjetas de Crédito y Escenario de Agencia de Viajes
 
-La temática es libre. Tú debes pensar en qué situaciones de la vida real se
-necesitaría validar una tarjeta de crédito y pensar en cómo debe ser esa
-experiencia de uso (qué pantallas, explicaciones, mensajes, colores, ¿marca?)
-etc.
+La aplicación "Validador de Tarjeta de Crédito" permite a los usuarios ingresar el número de su tarjeta de crédito en el campo provisto. El validador aplica el algoritmo de Luhn para verificar la validez de la tarjeta. Si es válida, se muestra un mensaje de aprobación y se ocultan todos los dígitos, excepto los últimos cuatro. Además, se muestra el logotipo de Visa o MasterCard según la franquicia de la tarjeta.
 
-Como continuación del proyecto de preadmisión, volverás a trabajar sobre
-fundamentos de JavaScript, incluyendo conceptos como variables, condicionales,
-y funciones, así como eventos y manipulación básica del DOM, fundamentos de
-HTML y CSS. Mientras desarrollas este proyecto, te familiarizarás con nuevos
-conceptos también.
+La interfaz de la aplicación recrea el escenario de una agencia de viajes, brindando a los usuarios una experiencia visual atractiva y realista. 
+
+## Interfaz de Usuario
+
+### Pantalla de Inicio
+
+La pantalla de inicio es el primer lugar donde los usuarios interactúan con nuestra aplicación. Aquí pueden ingresar el número de su tarjeta de crédito para su validación.
+
+![Pantalla de Inicio](./assets/home.png)
+
+### Validación Exitosa
+
+Cuando el usuario ingresa un número de tarjeta de crédito válido, la aplicación muestra un mensaje de validación exitosa y oculta todos los dígitos de la tarjeta, excepto los últimos cuatro. Además, se muestra el logotipo de la franquicia correspondiente.
+
+- Si el número de tarjeta de crédito comienza con "4", se muestra el logotipo de Visa.
+- Si el número de tarjeta de crédito comienza con "5", se muestra el logotipo de MasterCard.
+
+Los datos ingresados en el formulario, como el nombre del titular y la fecha de vencimiento, se capturan y se reflejan en la imagen de la tarjeta de crédito que se muestra al costado.
+
+
+![Validación Exitosa](screenshots/validacion-exitosa.png)
+
+### Validación Fallida
+
+Si el usuario ingresa un número de tarjeta de crédito no válido, la aplicación muestra un mensaje de validación fallida para informar al usuario que la tarjeta no es válida.
+
+![Validación Fallida](screenshots/validacion-fallida.png)
+
 

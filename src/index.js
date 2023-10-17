@@ -1,10 +1,11 @@
 import validator from "./js/validator.js";
+import showMenu from "./js/validator.js";
 
 const tarjeta = document.querySelector("#tarjeta");
 const menuIcon = document.querySelector(".menu-icon");
-const elementosMenu = document.getElementById("menu");
-const formulario = document.querySelector("#formulario-tarjeta");
+const logoMarca = document.querySelector("#logo-marca");
 
+const formulario = document.querySelector("#formulario-tarjeta");
 const inputNumero = document.querySelector("#inputNumero");
 const inputNombre = document.querySelector("#inputNombre");
 
@@ -14,24 +15,16 @@ const texto = document.querySelector("#texto");
 const texto2 = document.querySelector("#texto2");
 const btn = document.querySelector("#btn-enviar");
 
-const logoMarca = document.querySelector("#logo-marca");
 const firma = document.querySelector("#tarjeta .firma p");
 const mesExpiracion = document.querySelector('.mes');
 const yearExpiracion= document.querySelector('.year');
 const cvv= document.querySelector('.cvv');
 
 
-
-
-// Menú hamburguesa
+// Menú desplaegable
 menuIcon.addEventListener("click", showMenu);
-function showMenu() {
-  // Si tiene o no  la clase aparece y desaparece
-  elementosMenu.classList.toggle("active");
-}
 
-
-// * Volteamos la tarjeta para mostrar el frente
+// Volteamos la tarjeta para mostrar el frente
 const mostrarFrente = () => {
   if (tarjeta.classList.contains("active")) {
     tarjeta.classList.remove("active");
@@ -44,23 +37,8 @@ tarjeta.addEventListener("click", () => {
 });
 
 
-// Select del mes y año generado dinámicamnete
-for (let i = 1; i <= 12; i++) {
-  const opcion = document.createElement("option");
-  opcion.value = i;
-  opcion.innerText = i;
-  formulario.selectMes.appendChild(opcion);
-}
 
-const yearActual = new Date().getFullYear();
-for (let i = yearActual; i <= yearActual + 8; i++) {
-  const opcion = document.createElement("option");
-  opcion.value = i;
-  opcion.innerHTML = i;
-  formulario.selectYear.appendChild(opcion);
-}
-
-// Si el clic ocurre fuera del formulario, limpiar mensajes de error y estilos rojos
+// Si el click ocurre fuera del formulario, limpiar mensajes de error y estilos rojos
 document.addEventListener("click", (e) => {
   if (!formulario.contains(e.target)) {
     inputNumero.style.border = "2px solid #b2b7be";
@@ -70,34 +48,14 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// -----------------------------------------------------------------------------------------------
+
 // * INPUT NUMERO TARJETA
 
-formulario.inputNumero.addEventListener("blur", () => {
-  const valorInput = formulario.inputNumero.value;
-
-  if (valorInput === "") {
-    inputNumero.style.border = "2px solid #b2b7be"; // Quitar borde rojo
-    texto.innerHTML = ""; // Limpiar mensaje de error
-  }
-});
-
-formulario.inputNombre.addEventListener("blur", () => {
-  const valorInput = formulario.inputNombre.value;
-
-  if (valorInput === "") {
-    inputNombre.style.border = "2px solid #b2b7be"; // Quitar borde rojo
-    texto2.innerHTML = ""; // Limpiar mensaje de error
-  }
-});
-
 formulario.inputNumero.addEventListener("input", () => {
-  // const valorInput = e.target.value;
   const valorInput = formulario.inputNumero.value;
-  formulario.inputNumero.value = valorInput
-    .replace(/\s/g, "") // Eliminar espacios
-    .replace(/\D/g, "") // Eliminar letras
-    .replace(/([0-9]{4})/g, "$1 ") // Agregar espacios cada 4 digítos
-    .trim();
+
+  formulario.inputNumero.value = valorInput.replace(/\s/g, "").replace(/\D/g, "").replace(/([0-9]{4})/g, "$1 ").trim();
   numeroTarjeta.textContent = valorInput;
 
   if (valorInput === "") {
@@ -106,8 +64,8 @@ formulario.inputNumero.addEventListener("input", () => {
     inputNumero.style.border = "2px solid #b2b7be";
     texto.innerHTML = "";
   } else {
-    inputNumero.style.border = "1px solid #52bd55"; // Establecer borde verde
-    texto.innerHTML = ""; // Limpiar mensaje de error
+    inputNumero.style.border = "1px solid #52bd55"; // borde verde
+    texto.innerHTML = ""; 
   }
 
   if (valorInput[0] === "4") {
@@ -124,23 +82,9 @@ formulario.inputNumero.addEventListener("input", () => {
   mostrarFrente();
 });
 
-// Input nombre de tarjeta
-formulario.inputNombre.addEventListener("input", () => {
-  const valorInput = formulario.inputNombre.value;
 
-  formulario.inputNombre.value = valorInput.replace(/[0-9]/g, "");
-  nombreTarjeta.textContent = valorInput;
-  firma.textContent = valorInput;
 
-  if (valorInput === "") {
-    nombreTarjeta.textContent = "Sofia Torres";
-    inputNombre.style.border = "2px solid #b2b7be";
-    texto2.innerHTML = "";
-  }
-
-  mostrarFrente();
-});
-
+// INPUT NUMERO FORMULARIO
 btn.addEventListener("click", validate);
 function validate() {
   const valorNumero = inputNumero.value;
@@ -164,21 +108,54 @@ function validate() {
     texto2.innerHTML = "Este campo es obligatorio";
     inputNombre.style.border = "1px solid red";
   }
-}
+} 
 
+// INPUT NOMBRE TARJETA
+formulario.inputNombre.addEventListener("input", () => {
+  const valorInput = formulario.inputNombre.value;
+
+  formulario.inputNombre.value = valorInput.replace(/[0-9]/g, "");
+  nombreTarjeta.textContent = valorInput;
+  firma.textContent = valorInput;
+
+  if (valorInput === "") {
+    nombreTarjeta.textContent = "Sofia Torres";
+    inputNombre.style.border = "2px solid #b2b7be";
+    texto2.innerHTML = "";
+  }
+
+  mostrarFrente();
+});
+
+// INPUT NOMBRE FORMULARIO
 formulario.inputNombre.addEventListener("input", () => {
   const valorInput = formulario.inputNombre.value;
 
   if (valorInput === "") {
     inputNombre.style.border = "2px solid #b2b7be"; // Quitar borde rojo
-    texto2.innerHTML = ""; // Limpiar mensaje de error
+    texto2.innerHTML = ""; 
   } else {
     inputNombre.style.border = "1px solid #52bd55"; // Establecer borde verde
-    texto2.innerHTML = ""; // Limpiar mensaje de error
+    texto2.innerHTML = ""; 
   }
 });
+// ------------------------------------------------------------------------------------
 
-// Select del mes y Año
+// Select del mes y año generado dinámicamnete
+for (let i = 1; i <= 12; i++) {
+  const opcion = document.createElement("option");
+  opcion.value = i;
+  opcion.innerText = i;
+  formulario.selectMes.appendChild(opcion);
+}
+
+const yearActual = new Date().getFullYear();
+for (let i = yearActual; i <= yearActual + 8; i++) {
+  const opcion = document.createElement("option");
+  opcion.value = i;
+  opcion.innerHTML = i;
+  formulario.selectYear.appendChild(opcion);
+}
 
 formulario.selectMes.addEventListener('change', (e) => {
   mesExpiracion.textContent = e.target.value;
