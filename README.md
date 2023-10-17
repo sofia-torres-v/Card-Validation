@@ -38,6 +38,9 @@ Cuando el usuario ingresa un número de tarjeta de crédito válido, la aplicaci
 - Si el número de tarjeta de crédito comienza con "4", se muestra el logotipo de Visa.
 - Si el número de tarjeta de crédito comienza con "5", se muestra el logotipo de MasterCard.
 
+Los datos ingresados en el formulario, como el nombre del titular y la fecha de vencimiento, se capturan y se reflejan en la imagen de la tarjeta de crédito que se muestra al costado.
+
+
 ![Validación Exitosa](screenshots/validacion-exitosa.png)
 
 ### Validación Fallida
