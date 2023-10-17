@@ -17,7 +17,7 @@ la suma de sus dígitos finales es un múltiplo de 10.
 
 ## Resumen del proyecto
 
-### Validación de Tarjetas de Crédito y Escenario de Agencia de Viajes
+### Validación de Tarjetas de Crédito en un Escenario de Agencia de Viajes
 
 La aplicación "Validador de Tarjeta de Crédito" permite a los usuarios ingresar el número de su tarjeta de crédito en el campo provisto. El validador aplica el algoritmo de Luhn para verificar la validez de la tarjeta. Si es válida, se muestra un mensaje de aprobación y se ocultan todos los dígitos, excepto los últimos cuatro. Además, se muestra el logotipo de Visa o MasterCard según la franquicia de la tarjeta.
 
