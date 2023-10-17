@@ -29,7 +29,7 @@ La interfaz de la aplicación recrea el escenario de una agencia de viajes, brin
 
 La pantalla de inicio es el primer lugar donde los usuarios interactúan con nuestra aplicación. Aquí pueden ingresar el número de su tarjeta de crédito para su validación.
 
-![Pantalla de Inicio](./assets/home.png)
+![Pantalla de Inicio](screenshots/inicio.png)
 
 ### Validación Exitosa
 
@@ -48,5 +48,4 @@ Los datos ingresados en el formulario, como el nombre del titular y la fecha de 
 Si el usuario ingresa un número de tarjeta de crédito no válido, la aplicación muestra un mensaje de validación fallida para informar al usuario que la tarjeta no es válida.
 
 ![Validación Fallida](screenshots/validacion-fallida.png)
-
 
