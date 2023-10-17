@@ -49,3 +49,21 @@ Si el usuario ingresa un número de tarjeta de crédito no válido, la aplicaci�
 
 ![Validación Fallida](screenshots/validacion-fallida.png)
 
+## Objetivos Generales
+
+Este proyecto tiene los siguientes objetivos:
+
+- Aplicar conceptos de JavaScript, HTML y CSS.
+- Construir una interfaz de usuario interactiva.
+- Implementar pruebas unitarias para garantizar la funcionalidad del validador.
+- Utilizar control de versiones con Git y alojar el proyecto en GitHub.
+- Desplegar la interfaz en línea usando GitHub Pages.
+
+---
+
+**Nota:** Para obtener detalles específicos sobre el funcionamiento de la aplicación y su interfaz de usuario, consulta las secciones anteriores de este README.
+
+---
+
+[Enlace a la interfaz de usuario](https://sofia-torres-v.github.io/Card-validation/src/index.html)
+
