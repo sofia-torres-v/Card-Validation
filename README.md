@@ -2,16 +2,9 @@
 
 ## Preámbulo
 
-El [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn),
-también llamado algoritmo de módulo 10, es un método de suma de verificación,
-se utiliza para validar números de identificación; tales como el IMEI de los
-celulares, tarjetas de crédito, etc.
+El [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn), también llamado algoritmo de módulo 10, es un método de suma de verificación,se utiliza para validar números de identificación; tales como el IMEI de loscelulares, tarjetas de crédito, etc.
 
-Este algoritmo es simple. Obtenemos la reversa del número a verificar (que
-solamente contiene dígitos [0-9]); a todos los números que ocupan una posición
-par se les debe multiplicar por dos, si este número es mayor o igual a 10,
-debemos sumar los dígitos del resultado; el número a verificar será válido si
-la suma de sus dígitos finales es un múltiplo de 10.
+Este algoritmo es simple. Obtenemos la reversa del número a verificar (que solamente contiene dígitos [0-9]); a todos los números que ocupan una posición par se les debe multiplicar por dos, si este número es mayor o igual a 10, debemos sumar los dígitos del resultado; el número a verificar será válido si la suma de sus dígitos finales es un múltiplo de 10.
 
 ![gráfica de algoritmo de Luhn](./AlgoritmoLuhn.png)
 
@@ -31,25 +24,27 @@ La pantalla de inicio es el primer lugar donde los usuarios interactúan con nue
 
 ![Pantalla de Inicio](./src/assets/home.jpg)
 
+### Pantalla de Volteo y Firma
+
+Hemos mejorado la experiencia de usuario en la pantalla de validación de tarjeta de crédito con algunos efectos especiales:
+
+- **Efecto de Volteo**: Ahora, cuando haces clic en la tarjeta, se activa un efecto de volteo para mostrar la parte trasera de la tarjeta. Esto permite ver el CVV y la firma del titular.
+
+- **Firma del Titular**: En la parte trasera de la tarjeta, el nombre del titular se convierte en una firma personalizada. Hemos utilizado una fuente manuscrita para darle un toque auténtico.
+
+![Pantalla de Volteo y Firma](./src/assets/volteo-firma.jpg)
+
 ### Validación Exitosa
 
-Cuando el usuario ingresa un número de tarjeta de crédito válido, la aplicación muestra un mensaje de validación exitosa y oculta todos los dígitos de la tarjeta, excepto los últimos cuatro. Además, se muestra el logotipo de la franquicia correspondiente.
+Cuando el usuario ingresa un número de tarjeta de crédito válido, la aplicación muestra un mensaje de validación exitosa y oculta todos los dígitos de la tarjeta, excepto los últimos cuatro. 
 
 - Si el número de tarjeta de crédito comienza con "4", se muestra el logotipo de Visa.
 - Si el número de tarjeta de crédito comienza con "5", se muestra el logotipo de MasterCard.
+- Si el usuario ingresa un número de tarjeta de crédito no válido, la aplicación muestra un mensaje de validación fallida para informar al usuario que la tarjeta no es válida.
 
-Los datos ingresados en el formulario, como el nombre del titular y la fecha de vencimiento, se capturan y se reflejan en la imagen de la tarjeta de crédito que se muestra al costado.
-
-
-![Validación Exitosa](screenshots/validacion-exitosa.png)
-
-### Validación Fallida
-
-Si el usuario ingresa un número de tarjeta de crédito no válido, la aplicación muestra un mensaje de validación fallida para informar al usuario que la tarjeta no es válida.
-
-![Validación Fallida](screenshots/validacion-fallida.png)
 
 ## Objetivos Generales
+
 
 Este proyecto tiene los siguientes objetivos:
 
@@ -61,9 +56,9 @@ Este proyecto tiene los siguientes objetivos:
 
 ---
 
-**Nota:** Para obtener detalles específicos sobre el funcionamiento de la aplicación y su interfaz de usuario, consulta las secciones anteriores de este README.
+[Enlace a la interfaz de usuario](https://sofia-torres-v.github.io/Card-validation/src/index.html)
 
 ---
 
-[Enlace a la interfaz de usuario](https://sofia-torres-v.github.io/Card-validation/src/index.html)
+
 
