@@ -32,7 +32,7 @@ Hemos mejorado la experiencia de usuario en la pantalla de validación de tarjet
 
 - **Firma del Titular**: En la parte trasera de la tarjeta, el nombre del titular se convierte en una firma personalizada. Hemos utilizado una fuente manuscrita para darle un toque auténtico.
 
-![Pantalla de Volteo y Firma](./src/assets/cad-effect.jpg)
+![Pantalla de Volteo y Firma](./src/assets/card-effect.jpg)
 
 ### Validación Exitosa
 
