@@ -1,5 +1,6 @@
+/* eslint-disable indent */
 
-const elementosMenu = document.getElementById("menu");
-export default function showMenu() {
-  elementosMenu.classList.toggle("active");
+export default function showMenu(elementosMenu, menuIcon) {
+    elementosMenu.classList.toggle("active");
+    menuIcon.classList.toggle("active");
 }

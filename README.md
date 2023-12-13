@@ -35,7 +35,7 @@ Hemos mejorado la experiencia de usuario en la pantalla de validación de tarjet
 ![Pantalla de Volteo y Firma](./src/assets/card-effect.jpg)
 
 ### Validación Exitosa
-
+git add
 Cuando el usuario ingresa un número de tarjeta de crédito válido, la aplicación muestra un mensaje de validación exitosa y oculta todos los dígitos de la tarjeta, excepto los últimos cuatro. 
 
 - Si el número de tarjeta de crédito comienza con "4", se muestra el logotipo de Visa.
