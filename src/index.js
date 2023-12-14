@@ -2,9 +2,12 @@
 import validator from "./js/validator.js";
 import showMenu from "./js/menu.js";
 
-const tarjeta = document.querySelector("#tarjeta");
 const menuIcon = document.querySelector(".menu-icon");
-const elementosMenu = document.getElementById("menu");
+const modalMenu = document.querySelector(".modal");
+const elementosMenu = document.querySelector("#menu");
+const closeModal = document.querySelector(".bx-x#icon-delete");
+
+const tarjeta = document.querySelector("#tarjeta");
 const logoMarca = document.querySelector("#logo-marca");
 
 const formulario = document.querySelector("#formulario-tarjeta");
@@ -22,7 +25,9 @@ const mesExpiracion = document.querySelector(".mes");
 const yearExpiracion = document.querySelector(".year");
 const cvv = document.querySelector(".cvv");
 
-menuIcon.addEventListener("click", () => showMenu(elementosMenu, menuIcon));
+menuIcon.addEventListener("click", () => showMenu(elementosMenu, modalMenu));
+
+closeModal.addEventListener("click", () => showMenu(elementosMenu, modalMenu));
 
 // Volteamos la tarjeta para mostrar el frente
 const mostrarFrente = () => {
@@ -46,7 +51,6 @@ document.addEventListener("click", (e) => {
 });
 
 // * INPUT NUMERO TARJETA
-
 formulario.inputNumero.addEventListener("input", () => {
     const valorInput = formulario.inputNumero.value;
 

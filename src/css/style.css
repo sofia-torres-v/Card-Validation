@@ -34,23 +34,52 @@ html {
     margin: 4px 0;
 }
 
-/* ------------------------------- */
+/* ------------------- modal menu mobile------------- */
+
+.modal {
+    position: relative;
+    background: rgba(34, 32, 32, 0.952);
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 500ms ease;
+}
+.modal.isActive {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal .bx-x {
+    color: #fff;
+    position: absolute;
+    font-size: 4.3rem;
+    top: 5%;
+    right: 14%;
+    transform: translateY(-50%);
+}
+/* ------------------------------ */
+
 .elementos {
     background-color: rgb(27, 27, 75);
     position: fixed;
     height: 100vh;
     top: 0;
+    left: 0;
     text-decoration: none;
     list-style: none;
-    left: 0;
-    width: 80%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 35px;
-    z-index: 1;
     left: -100%;
+    z-index: 2;
     /* transform: translatey(-100%); */
     transition: left 0.5s;
 }
@@ -63,14 +92,17 @@ html {
     text-decoration: none;
     transition: all 500ms ease;
     font-size: 2.3rem;
-    padding: 6px 10px;
+    padding: 8px 12px;
     border-radius: 5px;
     color: #fff;
     font-weight: 500;
 }
 
 .link:hover {
-    background-color: rgb(67, 20, 107);
+    background-color: rgb(64, 4, 117);
+}
+.elementos .default-active {
+    background-color: rgb(64, 4, 117);
 }
 
 .box-logo {
@@ -419,6 +451,22 @@ footer {
 }
 
 @media (min-width: 800px) {
+    .menu-icon,
+    .modal .bx-x {
+        display: none;
+    }
+
+    .modal {
+        position: inherit;
+        background: none;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        width: auto;
+        transition: none;
+        margin-left: 5%;
+    }
+
     .elementos {
         position: inherit; /* que vuelva a su flujo */
         height: auto;
@@ -426,12 +474,9 @@ footer {
         width: auto;
         gap: 30px;
     }
+
     .elementos .link {
         font-size: 1.8rem;
-    }
-
-    .menu-icon {
-        display: none;
     }
 
     .section {

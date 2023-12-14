@@ -1,162 +1,214 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tarjeta de crédito válida</title>
-    <!-- icono para la pestaña del navegador -->
-    <link rel="shortcut icon" href="./iconCard.png" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="menu container">
-        <div class="box-logo">
-          <img class="plane" src="./assets/airplne-white.png" alt="" />
-          <span class="logo">Flying</span>
-        </div>
-        <!-- Agregamos botón menú hamburguesa solo para mobil -->
-        <div class="menu-icon">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-        <!-- Menu desplegable oculto por defecto -->
-        <ul class="elementos" id="menu">
-          <li><a href="#" class="link">Inicio</a></li>
-          <li><a href="#" class="link">Promociones </a></li>
-          <li><a href="#" class="link">Métodos de pago</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <div class="section-general">
-        <div class="stepper">
-          <div class="step">
-            <div class="circle">1</div>
-            <div class="line"></div>
-          </div>
-          <div class="step">
-            <div class="circle">2</div>
-            <div class="line"></div>
-          </div>
-          <div class="step">
-            <div class="circle">3</div>
-            <div class="line"></div>
-          </div>
-          <div class="step">
-            <div class="circle-check">✔</div>
-          </div>
-        </div>
-
-        <div class="section">
-          <!-- tarjeta -->
-          <div class="tarjeta" id="tarjeta">
-            <div class="front">
-              <div class="logo-marca" id="logo-marca"></div>
-              <img class="chip" src="./assets/chip.png" alt="" />
-              <div class="datos">
-                <div class="group" id="numero">
-                  <p class="label">Número de tarjeta</p>
-                  <p class="numero">#### #### #### ####</p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Tarjeta de crédito válida</title>
+        <link rel="shortcut icon" href="./iconCard.png" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <nav class="menu container">
+                <div class="box-logo">
+                    <img
+                        class="plane"
+                        src="./assets/airplne-white.png"
+                        alt=""
+                    />
+                    <span class="logo">Flying</span>
                 </div>
-              </div>
 
-              <div class="datos-flex">
-                <div class="group" id="nombre">
-                  <p class="label">Nombre</p>
-                  <p class="nombre">Sofia Torres</p>
+                <div class="menu-icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
-          
 
-                <div class="group" id="expiracion">
-                  <p class="label">Expiración</p>
-                  <p class="expiracion">
-                    <span class="mes">MM</span> / <span class="year">AA</span>
-                  </p>
+                <!-- Menu desplegable oculto por defecto -->
+                <div class="modal">
+                    <i class="bx bx-x" id="icon-delete"></i>
+
+                    <ul class="elementos" id="menu">
+                        <li><a href="#" class="link">Inicio</a></li>
+                        <li>
+                            <a href="#" class="link default-active"
+                                >Promociones
+                            </a>
+                        </li>
+                        <li><a href="#" class="link">Métodos de pago</a></li>
+                    </ul>
                 </div>
-              </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="section-general">
+                <div class="stepper">
+                    <div class="step">
+                        <div class="circle">1</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="step">
+                        <div class="circle">2</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="step">
+                        <div class="circle">3</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="step">
+                        <div class="circle-check">✔</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <!-- tarjeta -->
+                    <div class="tarjeta" id="tarjeta">
+                        <div class="front">
+                            <div class="logo-marca" id="logo-marca"></div>
+                            <img class="chip" src="./assets/chip.png" alt="" />
+                            <div class="datos">
+                                <div class="group" id="numero">
+                                    <p class="label">Número de tarjeta</p>
+                                    <p class="numero">#### #### #### ####</p>
+                                </div>
+                            </div>
+
+                            <div class="datos-flex">
+                                <div class="group" id="nombre">
+                                    <p class="label">Nombre</p>
+                                    <p class="nombre">Sofia Torres</p>
+                                </div>
+
+                                <div class="group" id="expiracion">
+                                    <p class="label">Expiración</p>
+                                    <p class="expiracion">
+                                        <span class="mes">MM</span> /
+                                        <span class="year">AA</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reverse">
+                            <div class="barra-magnetica"></div>
+
+                            <div class="box-datos">
+                                <div class="datos">
+                                    <div class="group" id="firma">
+                                        <p class="label">Firma</p>
+                                        <div class="firma"><p>Sofia</p></div>
+                                    </div>
+                                    <div class="group" id="cvv">
+                                        <p class="label">CVV</p>
+                                        <div class="cvv"><p></p></div>
+                                    </div>
+                                </div>
+                                <p class="leyenda">
+                                    Esta tarjeta es propiedad del
+                                    bancoContinental, su uso es personal e
+                                    instranferible.
+                                </p>
+                                <a href="#" class="link-card"
+                                    >www.bancoContinental.com.pe</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- formulario -->
+                    <form
+                        action=""
+                        id="formulario-tarjeta"
+                        class="formulario-tarjeta"
+                    >
+                        <p class="title-formulario">Pagar y Reservar vuelo</p>
+
+                        <div class="group">
+                            <label for="inputNumero">Número de tarjeta</label>
+                            <input
+                                type="text"
+                                id="inputNumero"
+                                maxlength="19"
+                                autocomplete="off"
+                            />
+                            <span id="texto"></span>
+                        </div>
+
+                        <div class="group">
+                            <label for="inputNombre">Nombre y Apellido</label>
+                            <input
+                                type="text"
+                                id="inputNombre"
+                                maxlength="19"
+                                autocomplete="off"
+                            />
+                            <span id="texto2"></span>
+                        </div>
+
+                        <div class="flexbox">
+                            <div class="group expira">
+                                <label for="selectMes">Expiración</label>
+                                <div class="flexbox">
+                                    <div class="group-select">
+                                        <select name="mes" id="selectMes">
+                                            <option disabled selected>
+                                                Mes
+                                            </option>
+                                        </select>
+                                        <!-- <i class="fa-solid fa-angle-down"></i> -->
+                                        <img
+                                            class="angle"
+                                            src="./assets/angle.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="group-select">
+                                        <select name="year" id="selectYear">
+                                            <option disabled selected>
+                                                Año
+                                            </option>
+                                        </select>
+                                        <img
+                                            class="angle"
+                                            src="./assets/angle.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group cvv">
+                                <label for="inputCvv" class="inputCvv"
+                                    >cvv</label
+                                >
+                                <input
+                                    type="text"
+                                    id="inputCvv"
+                                    maxlength="3"
+                                />
+                            </div>
+                        </div>
+
+                        <button id="btn-enviar" type="button">
+                            Pagar ahora
+                        </button>
+                    </form>
+                </div>
             </div>
+        </main>
 
-            <div class="reverse">
-              <div class="barra-magnetica"></div>
-
-              <div class="box-datos">
-                <div class="datos">
-                  <div class="group" id="firma">
-                    <p class="label">Firma</p>
-                    <div class="firma"><p>Sofia</p></div>
-                  </div>
-                  <div class="group" id="cvv">
-                    <p class="label">CVV</p>
-                    <div class="cvv"><p></p></div>
-                  </div>
-                </div>
-                <p class="leyenda">
-                  Esta tarjeta es propiedad del bancoContinental, su uso es
-                  personal e instranferible.
-                </p>
-                <a href="#" class="link-card">www.bancoContinental.com.pe</a>
-              </div>
+        <footer>
+            <div class="contenedor-footer container">
+                <p>© 2023 / Todos los Derechos Reservados.</p>
             </div>
-          </div>
+        </footer>
 
-          <!-- formulario -->
-          <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
-            <p class="title-formulario">Pagar y Reservar vuelo</p>
-
-			<div class="group">
-			  <label for="inputNumero">Número de tarjeta</label>
-			  <input type="text" id="inputNumero" maxlength="19" autocomplete="off"/>
-              <span id="texto"></span>
-			</div>
-
-            <div class="group">
-              <label for="inputNombre">Nombre y Apellido</label>
-              <input type="text"id="inputNombre"maxlength="19"autocomplete="off"/>
-              <span id="texto2"></span>
-            </div>
-
-
-            <div class="flexbox">
-              <div class="group expira">
-                <label for="selectMes">Expiración</label>
-                <div class="flexbox">
-                  <div class="group-select">
-                    <select name="mes" id="selectMes">
-                      <option disabled selected>Mes</option>
-                    </select>
-                    <!-- <i class="fa-solid fa-angle-down"></i> -->
-                    <img class="angle" src="./assets/angle.png" alt="" />
-                  </div>
-                  <div class="group-select">
-                    <select name="year" id="selectYear">
-                      <option disabled selected>Año</option>
-                    </select>
-                    <img class="angle" src="./assets/angle.png" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div class="group cvv">
-                <label for="inputCvv" class="inputCvv">cvv</label>
-                <input type="text" id="inputCvv" maxlength="3" />
-              </div>
-            </div>
-
-            <button id="btn-enviar" type="button">Pagar ahora</button>
-          </form>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="contenedor-footer container">
-        <p>© 2023 / Todos los Derechos Reservados.</p>
-      </div>
-    </footer>
-
-    <script src="index.js" type="module"></script>
-  </body>
+        <script src="index.js" type="module"></script>
+    </body>
 </html>
