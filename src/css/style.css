@@ -93,16 +93,16 @@ html {
     transition: all 500ms ease;
     font-size: 2.3rem;
     padding: 8px 12px;
-    border-radius: 5px;
+    border-radius: 4px;
     color: #fff;
     font-weight: 500;
 }
 
 .link:hover {
-    background-color: rgb(64, 4, 117);
+    background-color: rgba(119, 32, 195, 0.2);
 }
 .elementos .default-active {
-    background-color: rgb(64, 4, 117);
+    background-color: rgba(119, 32, 195, 0.2);
 }
 
 .box-logo {
