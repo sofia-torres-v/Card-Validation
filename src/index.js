@@ -23,13 +23,14 @@ const mesExpiracion = document.querySelector(".mes");
 const yearExpiracion = document.querySelector(".year");
 const cvv = document.querySelector(".cvv");
 
-// Eventos
+// Eventos Menu
 menuIcon.addEventListener("click", () => showMenu(elementosMenu, modalMenu));
 closeModal.addEventListener("click", () => showMenu(elementosMenu, modalMenu));
 tarjeta.addEventListener("click", () => {
     tarjeta.classList.toggle("active");
 });
 
+// Tarjeta y Formulario
 document.addEventListener("click", (e) => {
     if (!formulario.contains(e.target)) {
         inputNumero.style.border = "2px solid #b2b7be";
@@ -39,14 +40,13 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// Funciones
 const mostrarFrente = () => {
     if (tarjeta.classList.contains("active")) {
         tarjeta.classList.remove("active");
     }
 };
 
-// * INPUT NUMERO TARJETA
+// * Input numero de tarjeta
 formulario.inputNumero.addEventListener("input", () => {
     const valorInput = formulario.inputNumero.value;
 
@@ -81,11 +81,12 @@ formulario.inputNumero.addEventListener("input", () => {
     mostrarFrente();
 });
 
-// INPUT NUMERO FORMULARIO
+// Input numero en formulario
 btn.addEventListener("click", validate);
 function validate() {
     const valorNumero = inputNumero.value;
     const valorNombre = inputNombre.value;
+    // Función para enmascarar el número de tarjeta
 
     const luhn = validator.isValid(valorNumero);
 
@@ -95,6 +96,13 @@ function validate() {
     } else if (luhn) {
         texto.innerHTML = "Tarjeta válida";
         inputNumero.style.border = "1px solid #52bd55";
+        // Verificar la longitud antes de aplicar la máscara
+        if (valorNumero.length >= 4) {
+            const numeroEnmascarado = validator.maskify(valorNumero);
+            numeroTarjeta.textContent = numeroEnmascarado;
+        } else {
+            numeroTarjeta.textContent = valorNumero;
+        }
     } else {
         texto.innerHTML = " Error de validacion";
         inputNumero.style.border = "1px solid red";
