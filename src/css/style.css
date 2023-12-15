@@ -27,11 +27,9 @@ html {
     align-items: center;
 }
 
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
+.bx-menu {
+    font-size: 3rem;
+    color: #fff;
 }
 
 /* ------------------- modal menu mobile------------- */
